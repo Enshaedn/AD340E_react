@@ -1,0 +1,3 @@
+rootProject.name = 'enshaedn_react'
+
+include ':app'
