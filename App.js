@@ -2,21 +2,13 @@ import React, { Component } from 'react';
 import { Button, Text, View } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 
-class Home extends Component {
-    static navigationOptions = {
-        title: "Enshaedn React"
-    };
-    render(){
-        const { navigate } = this.props.navigation;
-        return (
-            <View>
-                <Button
-                    onPress={ () => navigate('Cams')}
-                    title="Traffic Cameras"
-                />
-            </View>
-        )
-    }
+import Home from './Home';
+import TrafficCams from './TrafficCams';
+
+export default class App extends Component {
+  render() {
+    return <AppNav />;
+  }
 }
 
 const AppNav = StackNavigator({
@@ -25,27 +17,11 @@ const AppNav = StackNavigator({
     }, {
         navigationOptions: {
             headerStyle: {
-                backgroundColor: '#ef7015'
+                backgroundColor: '#108767'
             },
-            headerTintColor: '#fff',
+            headerTintColor: '#ddd',
             headerTitleStyle: {
                 fontWeight: 'bold',
             },
         }
 });
-
-export default class App extends Component {
-  render() {
-    return <AppNav />;
-  }
-}
-
-class TrafficCams extends Component {
-    render() {
-        return (
-            <View>
-            <Text>Screen two!</Text>
-            </View>
-        );
-    }
-}
